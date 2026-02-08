@@ -46,13 +46,13 @@ body {
 
 .player2 {
   position: absolute;
-  top: 500px;        /* adjust to place it in collage */
+  top: 650px;        /* adjust to place it in collage */
   left: 1900px;       /* adjust horizontal position */
   width: 500px;       /* size of the player */
   height: 160px;
   border-radius: 12px;
   
-  transform: rotate(2deg);  /* optional slight rotation */
+  transform: rotate(0deg);  /* optional slight rotation */
 }
 
 
