@@ -16,19 +16,19 @@ body {
 }
 
 .img1 {
-  top: 60px;
+  top: 100px;
   left: 80px;
   transform: rotate(-6deg);
 }
 
 .img2 {
   top: 220px;
-  left: 260px;
+  left: 600px;
   transform: rotate(8deg);
 }
 
 .img3 {
-  top: 120px;
-  left: 520px;
+  top: 150px;
+  left: 850px;
   transform: rotate(-12deg);
 }
