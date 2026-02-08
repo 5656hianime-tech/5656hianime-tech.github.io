@@ -5,15 +5,15 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow: auto; /* allows vertical and horizontal scroll */
+  overflow: auto; /* allow scrolling */
   font-family: sans-serif;
 }
 
 /* --------------------- Collage Container --------------------- */
 .collage {
   position: relative;
-  width: 2500px;      /* wide enough for desktop layout */
-  height: 2000px;     /* tall enough for desktop collage */
+  width: 2500px;      /* desktop width */
+  height: 2000px;     /* desktop height */
 }
 
 /* --------------------- Images --------------------- */
@@ -37,20 +37,53 @@ body {
   box-shadow: 0 5px 20px rgba(255,255,255,0.2);
 }
 
-/* Desktop positions */
 .player1 { top: 400px; left: 1900px; transform: rotate(0deg); }
 .player2 { top: 650px; left: 1900px; transform: rotate(0deg); }
 
 /* --------------------- MOBILE ADJUSTMENT --------------------- */
 @media (max-width: 768px) {
-  /* Move Spotify players below images on mobile */
-  .player1 { top: 1200px; left: 10px; width: 80vw; }
-  .player2 { top: 1450px; left: 10px; width: 80vw; }
+  .collage {
+    width: 100vw;
+    min-width: 100%; /* full width */
+    height: auto;
+    min-height: 1600px; /* enough height for stacked layout */
+  }
 
-  /* Optional: shrink images slightly to fit mobile */
-  .img { width: 70vw; }
+  /* Center images and stack them vertically */
+  .img1 {
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-6deg);
+    width: 70vw;
+  }
 
-  /* Ensure collage container tall enough for scroll */
-  .collage { min-height: 1600px; }
+  .img2 {
+    top: 400px;
+    left: 50%;
+    transform: translateX(-50%) rotate(8deg);
+    width: 70vw;
+  }
+
+  .img3 {
+    top: 750px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-12deg);
+    width: 70vw;
+  }
+
+  /* Center Spotify players below images */
+  .player1 {
+    top: 1150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+  }
+
+  .player2 {
+    top: 1350px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+  }
 }
 
