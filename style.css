@@ -44,3 +44,12 @@ body {
   transform: rotate(0deg);   /* optional rotation for collage vibe */
 }
 
+body {
+  margin: 0;
+  background-image: url('images/stars1.jpg');
+  background-size: cover;      /* cover whole screen */
+  background-position: center; /* center the image */
+  background-repeat: no-repeat;
+}
+
+
