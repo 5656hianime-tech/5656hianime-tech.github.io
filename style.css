@@ -43,17 +43,28 @@ body {
 /* --------------------- Mobile-Friendly Adjustment --------------------- */
 @media (max-width: 1024px) {
   .collage {
-    width: 100vw;  /* allow collage to shrink to screen width */
-    min-width: 1000px; /* keep enough width for desktop layout scroll */
-    overflow: auto;    /* ensure scrolling works */
+    width: 100vw;       /* shrink to mobile width */
+    min-width: 1000px;  /* keep enough width for desktop scroll */
+    overflow: auto;      /* scrolling works */
   }
 
-  .player1, .player2 {
-    left: auto;  /* unset desktop left */
-    right: 10px; /* move them into view on mobile */
-    width: 80vw; /* fit mobile screen */
+  /* Shrink images slightly and move them down so Spotify players aren't on top */
+  .img {
+    width: 70vw;
   }
+  .img1 { top: 150px; }   /* moved down */
+  .img2 { top: 300px; }   /* moved down */
+  .img3 { top: 550px; }   /* moved slightly down */
 
-  /* keep images at fixed positions, but shrink slightly for mobile */
-  .img { width: 70vw; }
+  /* Spotify players move into view */
+  .player1 {
+    left: 10px;
+    top: 950px;    /* below images */
+    width: 80vw;
+  }
+  .player2 {
+    left: 10px;
+    top: 1150px;   /* below first player */
+    width: 80vw;
+  }
 }
