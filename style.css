@@ -1,20 +1,30 @@
+/* --------------------- Body and Background --------------------- */
 body {
   margin: 0;
-  background: #f2f2f2;
+  background-image: url('images/stars2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow-x: hidden; /* prevents horizontal scrolling on mobile */
+  font-family: sans-serif;
 }
 
+/* --------------------- Collage Container --------------------- */
 .collage {
   position: relative;
   width: 100vw;
   height: 100vh;
 }
 
+/* --------------------- Images --------------------- */
 .img {
   position: absolute;
-  width: 450px;
+  width: 450px; /* keeps your original size */
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  object-fit: cover; /* keeps image from squishing */
 }
 
+/* Individual image positions and rotations */
 .img1 {
   top: 100px;
   left: 80px;
@@ -33,35 +43,46 @@ body {
   transform: rotate(-12deg);
 }
 
+/* --------------------- Spotify Players --------------------- */
+.player1, .player2 {
+  position: absolute; /* allows moving anywhere */
+  border-radius: 12px;
+  height: auto;       /* keeps correct aspect ratio */
+  box-shadow: 0 5px 20px rgba(255,255,255,0.2);
+}
+
+/* Individual player positions and rotations */
 .player1 {
-  position: absolute;         /* lets you place it anywhere in the collage */
-  top: 400px;                 /* distance from top */
-  left: 1900px;                /* distance from left */
-  width: 500px;               /* adjust size */
-  height: 160px;               /* adjust height */
-  border-radius: 12px;        /* matches your style */
-   /* optional shadow */
-  transform: rotate(0deg);   /* optional rotation for collage vibe */
+  top: 400px;
+  left: 1900px;
+  width: 500px;
+  transform: rotate(0deg);
 }
 
 .player2 {
-  position: absolute;
-  top: 650px;        /* adjust to place it in collage */
-  left: 1900px;       /* adjust horizontal position */
-  width: 500px;       /* size of the player */
-  height: 160px;
-  border-radius: 12px;
+  top: 650px;
+  left: 1900px;
+  width: 500px;
+  transform: rotate(0deg);
+}
+
+/* --------------------- Responsive Adjustments --------------------- */
+@media (max-width: 1200px) {
+  .img { width: 35vw; }       /* scales images down on smaller desktops/tablets */
+  .player1, .player2 { width: 40vw; }
+}
+
+@media (max-width: 768px) {
+  .img { width: 70vw; }       /* scales images for mobile */
+  .player1, .player2 { width: 80vw; } /* Spotify players scale for mobile */
   
-  transform: rotate(0deg);  /* optional slight rotation */
+  /* Optional: move images/players a bit to fit smaller screens */
+  .img1 { top: 8%; left: 5%; }
+  .img2 { top: 30%; left: 5%; }
+  .img3 { top: 55%; left: 5%; }
+  .player1 { top: 25%; left: 10%; }
+  .player2 { top: 55%; left: 10%; }
 }
 
-
-body {
-  margin: 0;
-  background-image: url('images/stars2.jpg');
-  background-size: cover;      /* cover whole screen */
-  background-position: center; /* center the image */
-  background-repeat: no-repeat;
-}
 
 
