@@ -5,15 +5,15 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow: auto; /* allow scrolling in all directions */
+  overflow: auto; /* allows vertical and horizontal scroll */
   font-family: sans-serif;
 }
 
 /* --------------------- Collage Container --------------------- */
 .collage {
   position: relative;
-  width: 2500px;      /* desktop width */
-  height: 2000px;     /* desktop height */
+  width: 2500px;      /* wide enough for desktop layout */
+  height: 2000px;     /* tall enough for desktop collage */
 }
 
 /* --------------------- Images --------------------- */
@@ -37,36 +37,20 @@ body {
   box-shadow: 0 5px 20px rgba(255,255,255,0.2);
 }
 
+/* Desktop positions */
 .player1 { top: 400px; left: 1900px; transform: rotate(0deg); }
 .player2 { top: 650px; left: 1900px; transform: rotate(0deg); }
 
-/* --------------------- MOBILE FIX: Players above images --------------------- */
-@media (max-width: 1024px) {
-  .collage {
-    width: 100vw;
-    min-width: 1000px; /* keeps desktop scroll intact */
-    overflow: auto;
-  }
+/* --------------------- MOBILE ADJUSTMENT --------------------- */
+@media (max-width: 768px) {
+  /* Move Spotify players below images on mobile */
+  .player1 { top: 1200px; left: 10px; width: 80vw; }
+  .player2 { top: 1450px; left: 10px; width: 80vw; }
 
-  /* Images moved WAY down so no overlap */
-  .img1 { top: 3000px; }   /* moved far down */
-  .img2 { top: 3200px; }
-  .img3 { top: 3400px; }
+  /* Optional: shrink images slightly to fit mobile */
+  .img { width: 70vw; }
 
-  .img { width: 70vw; }  /* shrink images slightly for mobile */
-
-  /* Spotify players now at top, fully visible */
-  .player1 {
-    width: 80vw;
-    left: 10px;
-    top: 50px;
-  }
-  .player2 {
-    width: 80vw;
-    left: 10px;
-    top: 250px;
-  }
-
-  /* Ensure collage container is tall enough */
-  .collage { min-height: 3600px; }
+  /* Ensure collage container tall enough for scroll */
+  .collage { min-height: 1600px; }
 }
+
