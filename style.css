@@ -5,15 +5,15 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow: auto; /* allow full scrolling */
+  overflow: auto; /* allow scrolling in all directions */
   font-family: sans-serif;
 }
 
 /* --------------------- Collage Container --------------------- */
 .collage {
   position: relative;
-  width: 2500px;      /* wide enough for desktop layout */
-  height: 2000px;     /* tall enough for your images and players */
+  width: 2500px;      /* desktop width */
+  height: 2000px;     /* desktop height */
 }
 
 /* --------------------- Images --------------------- */
@@ -40,37 +40,33 @@ body {
 .player1 { top: 400px; left: 1900px; transform: rotate(0deg); }
 .player2 { top: 650px; left: 1900px; transform: rotate(0deg); }
 
-/* --------------------- Mobile-Friendly Adjustment --------------------- */
+/* --------------------- MOBILE FIX: Players above images --------------------- */
 @media (max-width: 1024px) {
   .collage {
-    width: 100vw;       /* shrink to screen width */
-    min-width: 1000px;  /* keep enough width for desktop scroll */
-    overflow: auto;      /* scrolling works */
+    width: 100vw;
+    min-width: 1000px; /* keeps desktop scroll intact */
+    overflow: auto;
   }
 
-  /* Shrink images slightly and move them WAY down so players are above */
-  .img {
-    width: 70vw;
-  }
-  .img1 { top: 1600px; }   /* way down */
-  .img2 { top: 1800px; }   /* way down */
-  .img3 { top: 2000px; }   /* way down */
+  /* Images moved WAY down so no overlap */
+  .img1 { top: 3000px; }   /* moved far down */
+  .img2 { top: 3200px; }
+  .img3 { top: 3400px; }
 
-  /* Spotify players move into view */
+  .img { width: 70vw; }  /* shrink images slightly for mobile */
+
+  /* Spotify players now at top, fully visible */
   .player1 {
-    left: 10px;
-    top: 50px;    /* well above images */
     width: 80vw;
+    left: 10px;
+    top: 50px;
   }
   .player2 {
-    left: 10px;
-    top: 250px;   /* below first player, still above images */
     width: 80vw;
+    left: 10px;
+    top: 250px;
   }
 
-  /* Ensure container is tall enough */
-  .collage {
-    min-height: 2200px;  /* enough for images + players */
-  }
+  /* Ensure collage container is tall enough */
+  .collage { min-height: 3600px; }
 }
-
