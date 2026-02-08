@@ -1,11 +1,12 @@
 /* --------------------- Body and Background --------------------- */
 body {
   margin: 0;
-  background-image: url('images/stars2.jpg');
+  background-image: url('images/stars2.jpg'); /* dark starry background */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow-x: hidden;
+  overflow-x: hidden;  /* hide horizontal scroll */
+  overflow-y: auto;    /* allow vertical scroll */
   font-family: sans-serif;
 }
 
@@ -13,74 +14,53 @@ body {
 .collage {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 2000px; /* ensures vertical scroll if collage is tall */
 }
 
 /* --------------------- Images --------------------- */
 .img {
   position: absolute;
+  width: 450px; /* keep original size */
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   object-fit: cover;
 }
 
-/* Individual image positions using percentages */
 .img1 {
-  top: 8vh;
-  left: 5vw;
-  width: 25vw;
+  top: 100px;
+  left: 80px;
   transform: rotate(-6deg);
 }
 
 .img2 {
-  top: 25vh;
-  left: 35vw;
-  width: 30vw;
+  top: 220px;
+  left: 600px;
   transform: rotate(8deg);
 }
 
 .img3 {
-  top: 55vh;
-  left: 25vw;
-  width: 25vw;
+  top: 550px;
+  left: 450px;
   transform: rotate(-12deg);
 }
 
 /* --------------------- Spotify Players --------------------- */
 .player1, .player2 {
   position: absolute;
+  width: 500px;  /* keep your original size */
+  height: 160px;
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(255,255,255,0.2);
-  height: auto;
-  width: 25vw; /* base width */
 }
 
-/* Individual positions using percentages */
+/* Individual player positions */
 .player1 {
-  top: 35vh;
-  left: 60vw;
+  top: 400px;
+  left: 1900px;
   transform: rotate(0deg);
 }
 
 .player2 {
-  top: 60vh;
-  left: 55vw;
+  top: 650px;
+  left: 1900px;
   transform: rotate(0deg);
-}
-
-/* --------------------- Responsive Adjustments --------------------- */
-@media (max-width: 1200px) {
-  .img { width: 35vw; }
-  .player1, .player2 { width: 35vw; }
-}
-
-@media (max-width: 768px) {
-  .img { width: 60vw; }
-  .player1, .player2 { width: 75vw; }
-
-  /* Adjust positions for smaller screens */
-  .img1 { top: 5vh; left: 5vw; }
-  .img2 { top: 25vh; left: 5vw; }
-  .img3 { top: 50vh; left: 5vw; }
-  .player1 { top: 30vh; left: 10vw; }
-  .player2 { top: 55vh; left: 10vw; }
 }
