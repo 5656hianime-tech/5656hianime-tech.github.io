@@ -5,7 +5,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow: auto; /* allow full scrolling in both directions */
+  overflow: auto; /* allow full scrolling */
   font-family: sans-serif;
 }
 
@@ -43,28 +43,34 @@ body {
 /* --------------------- Mobile-Friendly Adjustment --------------------- */
 @media (max-width: 1024px) {
   .collage {
-    width: 100vw;       /* shrink to mobile width */
+    width: 100vw;       /* shrink to screen width */
     min-width: 1000px;  /* keep enough width for desktop scroll */
     overflow: auto;      /* scrolling works */
   }
 
-  /* Shrink images slightly and move them down so Spotify players aren't on top */
+  /* Shrink images slightly and move them WAY down so players are above */
   .img {
     width: 70vw;
   }
-  .img1 { top: 150px; }   /* moved down */
-  .img2 { top: 300px; }   /* moved down */
-  .img3 { top: 550px; }   /* moved slightly down */
+  .img1 { top: 1600px; }   /* way down */
+  .img2 { top: 1800px; }   /* way down */
+  .img3 { top: 2000px; }   /* way down */
 
   /* Spotify players move into view */
   .player1 {
     left: 10px;
-    top: 950px;    /* below images */
+    top: 50px;    /* well above images */
     width: 80vw;
   }
   .player2 {
     left: 10px;
-    top: 1150px;   /* below first player */
+    top: 250px;   /* below first player, still above images */
     width: 80vw;
   }
+
+  /* Ensure container is tall enough */
+  .collage {
+    min-height: 2200px;  /* enough for images + players */
+  }
 }
+
