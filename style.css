@@ -1,12 +1,11 @@
 /* --------------------- Body and Background --------------------- */
 body {
   margin: 0;
-  background-image: url('images/stars2.jpg'); /* dark starry background */
+  background-image: url('images/stars2.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow-x: hidden;  /* hide horizontal scroll */
-  overflow-y: auto;    /* allow vertical scroll */
   font-family: sans-serif;
 }
 
@@ -20,7 +19,7 @@ body {
 /* --------------------- Images --------------------- */
 .img {
   position: absolute;
-  width: 450px; /* keep original size */
+  width: 450px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   object-fit: cover;
 }
@@ -46,13 +45,13 @@ body {
 /* --------------------- Spotify Players --------------------- */
 .player1, .player2 {
   position: absolute;
-  width: 500px;  /* keep your original size */
+  width: 500px;
   height: 160px;
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(255,255,255,0.2);
 }
 
-/* Individual player positions */
+/* Desktop positions */
 .player1 {
   top: 400px;
   left: 1900px;
@@ -64,3 +63,30 @@ body {
   left: 1900px;
   transform: rotate(0deg);
 }
+
+/* --------------------- Responsive Adjustments --------------------- */
+@media (max-width: 768px) {
+  /* Scale images down for mobile */
+  .img {
+    width: 70vw;
+  }
+
+  /* Reposition players so they fit on screen */
+  .player1 {
+    width: 80vw;
+    left: 10vw;
+    top: 1200px; /* place below images on mobile */
+  }
+
+  .player2 {
+    width: 80vw;
+    left: 10vw;
+    top: 1400px; /* place below images and first player */
+  }
+  
+  /* Increase container height so no white space */
+  .collage {
+    min-height: 1600px; /* enough for images + players on mobile */
+  }
+}
+
