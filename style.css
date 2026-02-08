@@ -36,11 +36,11 @@ body {
 .player1 {
   position: absolute;         /* lets you place it anywhere in the collage */
   top: 400px;                 /* distance from top */
-  left: 900px;                /* distance from left */
-  width: 250px;               /* adjust size */
-  height: 80px;               /* adjust height */
+  left: 150px;                /* distance from left */
+  width: 500px;               /* adjust size */
+  height: 160px;               /* adjust height */
   border-radius: 12px;        /* matches your style */
   box-shadow: 0 5px 20px rgba(0,0,0,0.2); /* optional shadow */
-  transform: rotate(-3deg);   /* optional rotation for collage vibe */
+  transform: rotate(0deg);   /* optional rotation for collage vibe */
 }
 
