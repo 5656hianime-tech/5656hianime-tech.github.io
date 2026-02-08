@@ -5,7 +5,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow-x: hidden; /* prevents horizontal scrolling on mobile */
+  overflow-x: hidden;
   font-family: sans-serif;
 }
 
@@ -19,70 +19,68 @@ body {
 /* --------------------- Images --------------------- */
 .img {
   position: absolute;
-  width: 450px; /* keeps your original size */
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  object-fit: cover; /* keeps image from squishing */
+  object-fit: cover;
 }
 
-/* Individual image positions and rotations */
+/* Individual image positions using percentages */
 .img1 {
-  top: 100px;
-  left: 80px;
+  top: 8vh;
+  left: 5vw;
+  width: 25vw;
   transform: rotate(-6deg);
 }
 
 .img2 {
-  top: 220px;
-  left: 600px;
+  top: 25vh;
+  left: 35vw;
+  width: 30vw;
   transform: rotate(8deg);
 }
 
 .img3 {
-  top: 550px;
-  left: 450px;
+  top: 55vh;
+  left: 25vw;
+  width: 25vw;
   transform: rotate(-12deg);
 }
 
 /* --------------------- Spotify Players --------------------- */
 .player1, .player2 {
-  position: absolute; /* allows moving anywhere */
+  position: absolute;
   border-radius: 12px;
-  height: auto;       /* keeps correct aspect ratio */
   box-shadow: 0 5px 20px rgba(255,255,255,0.2);
+  height: auto;
+  width: 25vw; /* base width */
 }
 
-/* Individual player positions and rotations */
+/* Individual positions using percentages */
 .player1 {
-  top: 400px;
-  left: 1900px;
-  width: 500px;
+  top: 35vh;
+  left: 60vw;
   transform: rotate(0deg);
 }
 
 .player2 {
-  top: 650px;
-  left: 1900px;
-  width: 500px;
+  top: 60vh;
+  left: 55vw;
   transform: rotate(0deg);
 }
 
 /* --------------------- Responsive Adjustments --------------------- */
 @media (max-width: 1200px) {
-  .img { width: 35vw; }       /* scales images down on smaller desktops/tablets */
-  .player1, .player2 { width: 40vw; }
+  .img { width: 35vw; }
+  .player1, .player2 { width: 35vw; }
 }
 
 @media (max-width: 768px) {
-  .img { width: 70vw; }       /* scales images for mobile */
-  .player1, .player2 { width: 80vw; } /* Spotify players scale for mobile */
-  
-  /* Optional: move images/players a bit to fit smaller screens */
-  .img1 { top: 8%; left: 5%; }
-  .img2 { top: 30%; left: 5%; }
-  .img3 { top: 55%; left: 5%; }
-  .player1 { top: 25%; left: 10%; }
-  .player2 { top: 55%; left: 10%; }
+  .img { width: 60vw; }
+  .player1, .player2 { width: 75vw; }
+
+  /* Adjust positions for smaller screens */
+  .img1 { top: 5vh; left: 5vw; }
+  .img2 { top: 25vh; left: 5vw; }
+  .img3 { top: 50vh; left: 5vw; }
+  .player1 { top: 30vh; left: 10vw; }
+  .player2 { top: 55vh; left: 10vw; }
 }
-
-
-
