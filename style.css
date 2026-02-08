@@ -5,7 +5,8 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow-x: hidden;  /* hide horizontal scroll */
+  overflow-x: hidden; /* hide horizontal scroll */
+  overflow-y: auto;   /* allow vertical scroll */
   font-family: sans-serif;
 }
 
@@ -13,7 +14,7 @@ body {
 .collage {
   position: relative;
   width: 100vw;
-  min-height: 2000px; /* ensures vertical scroll if collage is tall */
+  min-height: 2200px; /* enough for desktop & mobile scrolling */
 }
 
 /* --------------------- Images --------------------- */
@@ -64,29 +65,28 @@ body {
   transform: rotate(0deg);
 }
 
-/* --------------------- Responsive Adjustments --------------------- */
+/* --------------------- Mobile Adjustments --------------------- */
 @media (max-width: 768px) {
-  /* Scale images down for mobile */
+  /* Images scale down */
   .img {
     width: 70vw;
   }
 
-  /* Reposition players so they fit on screen */
+  /* Spotify players fit inside screen */
   .player1 {
     width: 80vw;
     left: 10vw;
-    top: 1200px; /* place below images on mobile */
+    top: 1200px; /* below images */
   }
 
   .player2 {
     width: 80vw;
     left: 10vw;
-    top: 1400px; /* place below images and first player */
+    top: 1400px; /* below first player */
   }
-  
-  /* Increase container height so no white space */
+
+  /* Ensure container is tall enough for scroll */
   .collage {
-    min-height: 1600px; /* enough for images + players on mobile */
+    min-height: 1600px;
   }
 }
-
