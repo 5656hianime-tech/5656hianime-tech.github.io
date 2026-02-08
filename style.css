@@ -5,16 +5,15 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow-x: hidden; /* hide horizontal scroll */
-  overflow-y: auto;   /* allow vertical scroll */
+  overflow: auto; /* allow full scrolling in both directions */
   font-family: sans-serif;
 }
 
 /* --------------------- Collage Container --------------------- */
 .collage {
   position: relative;
-  width: 100vw;
-  min-height: 2200px; /* enough for desktop & mobile scrolling */
+  width: 2500px;      /* wide enough for desktop layout */
+  height: 2000px;     /* tall enough for your images and players */
 }
 
 /* --------------------- Images --------------------- */
@@ -25,23 +24,9 @@ body {
   object-fit: cover;
 }
 
-.img1 {
-  top: 100px;
-  left: 80px;
-  transform: rotate(-6deg);
-}
-
-.img2 {
-  top: 220px;
-  left: 600px;
-  transform: rotate(8deg);
-}
-
-.img3 {
-  top: 550px;
-  left: 450px;
-  transform: rotate(-12deg);
-}
+.img1 { top: 100px; left: 80px; transform: rotate(-6deg); }
+.img2 { top: 220px; left: 600px; transform: rotate(8deg); }
+.img3 { top: 550px; left: 450px; transform: rotate(-12deg); }
 
 /* --------------------- Spotify Players --------------------- */
 .player1, .player2 {
@@ -52,41 +37,23 @@ body {
   box-shadow: 0 5px 20px rgba(255,255,255,0.2);
 }
 
-/* Desktop positions */
-.player1 {
-  top: 400px;
-  left: 1900px;
-  transform: rotate(0deg);
-}
+.player1 { top: 400px; left: 1900px; transform: rotate(0deg); }
+.player2 { top: 650px; left: 1900px; transform: rotate(0deg); }
 
-.player2 {
-  top: 650px;
-  left: 1900px;
-  transform: rotate(0deg);
-}
-
-/* --------------------- Mobile Adjustments --------------------- */
-@media (max-width: 768px) {
-  /* Images scale down */
-  .img {
-    width: 70vw;
-  }
-
-  /* Spotify players fit inside screen */
-  .player1 {
-    width: 80vw;
-    left: 10vw;
-    top: 1200px; /* below images */
-  }
-
-  .player2 {
-    width: 80vw;
-    left: 10vw;
-    top: 1400px; /* below first player */
-  }
-
-  /* Ensure container is tall enough for scroll */
+/* --------------------- Mobile-Friendly Adjustment --------------------- */
+@media (max-width: 1024px) {
   .collage {
-    min-height: 1600px;
+    width: 100vw;  /* allow collage to shrink to screen width */
+    min-width: 1000px; /* keep enough width for desktop layout scroll */
+    overflow: auto;    /* ensure scrolling works */
   }
+
+  .player1, .player2 {
+    left: auto;  /* unset desktop left */
+    right: 10px; /* move them into view on mobile */
+    width: 80vw; /* fit mobile screen */
+  }
+
+  /* keep images at fixed positions, but shrink slightly for mobile */
+  .img { width: 70vw; }
 }
