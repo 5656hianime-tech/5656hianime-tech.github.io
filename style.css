@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  background: #f2f2f2;
+}
+
+.collage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.img {
+  position: absolute;
+  width: 220px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.img1 {
+  top: 60px;
+  left: 80px;
+  transform: rotate(-6deg);
+}
+
+.img2 {
+  top: 220px;
+  left: 260px;
+  transform: rotate(8deg);
+}
+
+.img3 {
+  top: 120px;
+  left: 520px;
+  transform: rotate(-12deg);
+}
