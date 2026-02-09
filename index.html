@@ -3,38 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Collage</title>
+  <title>Letter Reveal</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="collage">
-    <img src="images/photo1.jpg" class="img img1">
-    <img src="images/photo2.jpg" class="img img2">
-    <img src="images/photo3.jpg" class="img img3">
-    <iframe 
-      class="player1"
-      data-testid="embed-iframe"
-      src="https://open.spotify.com/embed/track/2ynCjjrmED5CfiVn2ZLkUk?utm_source=generator"
-      frameborder="0"
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      allowfullscreen
-      loading="lazy">
-    </iframe>
+  <!-- INTRO / LETTER ENVELOPE -->
+  <section class="intro">
+    <div class="envelope" onclick="openLetter()">
+      <!-- Replace with your envelope image or animation -->
+      <img src="images/envelope.png" alt="letter" class="envelope-img">
 
-    <iframe
-      class="player2"
-      data-testid="embed-iframe"
-      style="border-radius:12px"
-      src="https://open.spotify.com/embed/track/5uraJqtCBvLpwt3VeomZdq?utm_source=generator"
-      frameborder="0"
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      allowfullscreen
-      loading="lazy">
-    </iframe>
+      <!-- Hidden letter content -->
+      <div class="letter-content">
+        <h1>Hello!</h1>
+        <p>Welcome to my mobile page. This is the letter inside.</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- Main content (optional) -->
+  <section class="content" id="content">
+    <div class="placeholder">
+      More content goes here ✨
+    </div>
+  </section>
 
-  </div>
+  <!-- JS -->
+  <script>
+    function openLetter() {
+      const envelope = document.querySelector(".envelope");
+      envelope.classList.add("open");
+
+      // Optional: show main content after delay
+      const content = document.getElementById("content");
+      setTimeout(() => {
+        content.classList.add("show");
+      }, 600); // matches CSS transition
+    }
+  </script>
 
 </body>
 </html>
