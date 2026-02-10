@@ -12,7 +12,7 @@ html, body {
 }
 
 .main-page {
-  min-height: 180vh; /* scrollable height */
+  min-height: 185vh; /* scrollable height */
   background-image: url("images/picture1.jpg");
   background-size: cover;       /* fills screen */
   background-position: center top;
@@ -23,7 +23,7 @@ html, body {
 /* clickable images */
 .clickable-image {
   position: absolute;
-  width: 50px;       /* adjust size */
+  width: 150px;       /* adjust size */
   cursor: pointer;
   transition: transform 0.2s;
 }
@@ -51,11 +51,58 @@ html, body {
 /* responsive for phones */
 @media (max-width: 500px) {
   .clickable-image {
-    width: 50px; /* smaller images on phones */
+    width: 200px; /* smaller images on phones */
   }
-  .img1 { top: 25%; left: 35%; }
-  .img2 { top: 45%; left: 35%; }
-  .img3 { top: 65%; left: 30%; }
+  .img1 { top: 20%; left: 25%; }
+  .img2 { top: 30%; left: 30%; }
+  .img3 { top: 40%; left: 30%; }
 }
 
+
+
+/* ===== WEB PAGES BACKGROUNDS ONLY ===== */
+
+.web1-page,
+.web2-page,
+.web3-page {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* individual backgrounds */
+.web1-page {
+  background-image: url("images/webpicture1.jpg");
+}
+
+.web2-page {
+  background-image: url("images/webpicture2.jpg");
+}
+
+.web3-page {
+  background-image: url("images/webpicture3.jpg");
+}
+
+
+.spotify {
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.spotify iframe {
+  width: 100%;
+  height: 152px;
+  border-radius: 12px;
+  border: none;
+}
+
+/* POSITIONING BY SPACING */
+.s1 { margin-top: 800px; }
+.s2 { margin-top: 40px; }
+.s3 { margin-top: 40px; }
 
