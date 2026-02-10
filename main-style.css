@@ -51,7 +51,7 @@ html, body {
 /* responsive for phones */
 @media (max-width: 500px) {
   .clickable-image {
-    width: 100px; /* smaller images on phones */
+    width: 50px; /* smaller images on phones */
   }
   .img1 { top: 25%; left: 35%; }
   .img2 { top: 45%; left: 35%; }
