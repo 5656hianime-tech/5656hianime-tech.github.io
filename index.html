@@ -3,44 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Letter Reveal</title>
+  <title>Full Screen Animated Letter</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- INTRO / LETTER ENVELOPE -->
-  <section class="intro">
-    <div class="envelope" onclick="openLetter()">
-      <!-- Replace with your envelope image or animation -->
-      <img src="images/envelope.png" alt="letter" class="envelope-img">
+  <!-- Envelope, Video, Final Letter -->
+  <img src="images/envelope_closed.png" alt="Envelope" id="letterStart" class="letter-layer">
+  <video id="letterVideo" class="letter-layer" playsinline muted preload="auto">
+    <source src="videos/letter_open.mp4" type="video/mp4">
+  </video>
+  <img src="images/letter_final.png" alt="Letter" id="letterFinal" class="letter-layer">
 
-      <!-- Hidden letter content -->
-      <div class="letter-content">
-        <h1>Hello!</h1>
-        <p>Welcome to my mobile page. This is the letter inside.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Main content (optional) -->
-  <section class="content" id="content">
-    <div class="placeholder">
-      More content goes here ✨
-    </div>
-  </section>
-
-  <!-- JS -->
   <script>
-    function openLetter() {
-      const envelope = document.querySelector(".envelope");
-      envelope.classList.add("open");
+    const envelope = document.getElementById('letterStart');
+    const video = document.getElementById('letterVideo');
+    const final = document.getElementById('letterFinal');
 
-      // Optional: show main content after delay
-      const content = document.getElementById("content");
-      setTimeout(() => {
-        content.classList.add("show");
-      }, 600); // matches CSS transition
-    }
+    // Hide video and final letter at start
+    video.style.display = 'none';
+    final.style.display = 'none';
+
+    envelope.addEventListener('click', () => {
+      // Hide envelope
+      envelope.style.display = 'none';
+
+      // Show and play video
+      video.style.display = 'block';
+      video.play().catch(() => {
+        alert("Tap again to play the animation.");
+      });
+
+      // When video ends
+      video.onended = () => {
+        video.style.display = 'none';
+        final.style.display = 'block';
+
+        // Wait a few seconds, then redirect
+        setTimeout(() => {
+          window.location.href = "main.html"; // <-- change to your main page URL
+        }, 3000); // 3000ms = 3 seconds
+      };
+    });
   </script>
 
 </body>
