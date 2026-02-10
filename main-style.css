@@ -16,6 +16,6 @@ html, body {
   background-position: top center;
   background-repeat: no-repeat;   /* only one image */
   width: 100vw;
-  min-height: 185vh;              /* fills screen once */
+  min-height: 180vh;              /* fills screen once */
 }
 
