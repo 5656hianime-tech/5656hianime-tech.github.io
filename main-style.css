@@ -53,9 +53,9 @@ html, body {
   .clickable-image {
     width: 100px; /* smaller images on phones */
   }
-  .img1 { top: 25%; left: 5%; }
+  .img1 { top: 25%; left: 35%; }
   .img2 { top: 45%; left: 35%; }
-  .img3 { top: 65%; left: 60%; }
+  .img3 { top: 65%; left: 30%; }
 }
 
 
